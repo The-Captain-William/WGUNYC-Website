@@ -1,0 +1,30 @@
+#main-page-contents {
+    display: flex;
+    align-content: center;
+}
+
+/*
+Using the section to crop the image
+and adjust the focal point
+*/
+section {
+    width: 40vw;
+    overflow: hidden;
+    height: 85vh;
+}
+
+#main-image {
+    width: 90vw;
+    position: relative;
+    left: -25vw;
+    top: -10vh;
+}
+
+aside {
+    margin-left: 65px;
+}
+
+
+.aside-funbox {
+    margin-top: 100px;
+}
