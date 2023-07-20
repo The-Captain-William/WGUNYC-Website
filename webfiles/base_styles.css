@@ -3,31 +3,74 @@ body {
     margin-right: 65px;
     color: whitesmoke;
     background-color: black;
+    font-family: 'Noto Sans';
 }
 
-/* define grid rows and columns*/
-/* fr -> fractional unit 
-    Here I'm saying the columns are 1 that is 2x size, then 3 that is x size
-    */
-nav {
+a {
+    color: whitesmoke;
+    text-decoration-line: none;
+}
+
+a:visited {
+    color: whitesmoke;
+}
+
+a:hover {
+    text-shadow: 0px 0px 3px white;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Noto Serif';
+}
+
+.nav--list {
+    list-style-type: none;
+    grid-template-columns: repeat(3, 1fr);
     display: grid;
-    grid-template-columns: 10fr repeat(3, 1fr);
-}
-
-.nav-top {
-    text-align: end;
+    gap: 25px;
 }
 
 /* 
-grid-row-start, grid-row-end, grid-column-start, grid-column-end
-grid-row, grid-column
+- add content to each bullet in the list after the list is rendered
+- pseudo-element inline by default (will only fill enough to encapsulate content), 
+so make it inline
+
+- absolute == removed from normal flow of the page, can set position manually.
+- if absolute block by default but I'm leaving it in for my own sake (to remember)
 */
 
+.nav--list li a::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background: white;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    opacity: 0;
+}
+
 /*
-Default h1 is 10rem, if screen is smaller than 900px change to 6rem
+- relative doesn't just allow you to move relative to where it would be, but sets an anchor 
+- point for absolute elements so they know from what reference point to move x & y
 */
+.nav--list li {
+    position: relative;
+}
+
+.nav--list li a:hover::after {
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+
 h1 {
-    font-size: 10rem;
+    font-size: 12rem;
     margin-bottom: 10px;
     margin-top: 10px;
     font-family: 'Noto Serif';
@@ -36,54 +79,55 @@ h1 {
 /*
 Aspect ratio is (x:y)
 */
-#main-page-contents {
-    display: grid;
-    grid-template-columns: 10fr 2fr;
-    grid-template-rows: 80%;
-    /* a single row, 80% of the page*/
-    grid-gap: 35px;
-    font-family: 'Noto Serif';
-    max-height: 900px;
+
+#main-container {
+    display: flex;
 }
 
-
-section {
-    overflow: hidden;
+.section--image {
     border-radius: 10px;
+    width: 70vw;
 }
-
 
 aside {
     text-align: justify;
-    font-family: 'Noto Sans';
+    margin-left: 65px;
+    width: 30ch;
 }
 
-/* 
-If an image is 100% of the container width, 
-and its not a square then there will be spillover if the row/x-value/height is fixed.
-Spillover (overflow) set to be hidden by container.
-*/
-section img {
-    border-radius: 10px;
-    max-width: 100%;
+aside p {
+    margin-top: 0px;
 }
 
-@media screen and (max-width:900px) {
-    nav {
-        grid-template-columns: 3fr repeat(3, 1fr);
-    }
-
+@media screen and (max-width:1300px) {
     h1 {
         font-size: 6rem;
     }
 
-    #main-page-contents {
-        grid-template-columns: 1fr;
-        grid-template-rows: 100%;
-        max-height: 300px;
+    aside {
+        margin-left: 30px;
     }
 
-    section img {
-        max-width: 900px;
+}
+
+@media screen and (max-width:1500px) {
+    body {
+        margin-left: 10px;
+        margin-right: 10px;
     }
+
+    .section--image {
+        width: 100%;
+    }
+
+    #main-container {
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+
+    aside {
+        margin-left: 0;
+        width: 100%;
+    }
+
 }
