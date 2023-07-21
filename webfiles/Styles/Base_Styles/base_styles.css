@@ -13,7 +13,7 @@ h1 {
 }
 
 a {
-    color: whitesmoke;
+    color: gainsboro;
     text-decoration-line: none;
 }
 
@@ -22,33 +22,71 @@ a:visited {
 }
 
 a:hover {
-    text-shadow: 0px 0px 3px white;
+    color: whitesmoke;
+    text-shadow: 0px 0px 0.125rem whitesmoke;
+    transition: all 0.3s;
+}
+
+/*
+I'm sure there is a better way, but this works to keep items apart for now
+*/
+
+nav div {
+    display: inline-block;
+    margin-left: 80vw;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+
+.dropdown-menu {
+    position: relative;
+}
+
+/*
+1. Make the width a little larger to fit all the items in one line
+2. Add some padding to the left so items are centered inside
+3. Shift the entire container over by the amount you over expanded by,
+to keep the container in the center. 
+*/
+.dropdown-list {
+    display: none;
+    position: absolute;
+    left: -10%;
+    padding-left: 10%;
+    background-color: rgb(0, 0, 0);
+    width: 110%;
+}
+
+.dropdown-menu:hover .dropdown-list {
+    display: block;
+}
+
+.dropdown-menu li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+aside p {
+    margin-top: 0px;
+}
+
+@media screen and (max-width:900px) {
+    nav div {
+        margin-left: 0px
+    }
 }
 
 /*
 align along y (main) axis, justify along x (cross) axis
 */
-nav {
+/* nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-
-
-.nav--list {
-    margin-left: 60vw;
-    list-style-type: none;
-    grid-template-columns: repeat(3, 1fr);
-    display: grid;
-    gap: 25px;
-}
+} */
 
 /* 
 - add content to each bullet in the list after the list is rendered
@@ -61,38 +99,32 @@ so make it inline
 - underline contained in list >li>a so it appears inside a tag,
 and only appears when directly over link, not just hovering over
 invisible li span.
+
+good code but less is more tbh
 */
 
-.nav--list li a::after {
+/* .nav--list li a::after {
     content: '';
     height: 2px;
     width: 100%;
-    background: white;
+    background: rgb(255, 255, 255);
     display: block;
     position: absolute;
     left: 0;
     bottom: -3px;
     opacity: 0;
-}
+} */
 
 /*
 - relative doesn't just allow you to move relative to where it would be, but sets an anchor 
 - point for absolute elements so they know from what reference point to move x & y
 */
-.nav--list li {
+/* .nav--list li {
     position: relative;
-}
-
-.nav--list li a:hover::after {
-    opacity: 1;
-    transition: all 0.3s;
-}
+} */
 
 
-.section--image {
-    border-radius: 8px;
-}
 
-aside p {
-    margin-top: 0px;
-}
+/* .section--image {
+    border-radius: -2px;
+} */
