@@ -15,6 +15,7 @@ h1 {
 a {
     color: gainsboro;
     text-decoration-line: none;
+    width: max-content;
 }
 
 a:visited {
@@ -30,6 +31,10 @@ a:hover {
 /*
 I'm sure there is a better way, but this works to keep items apart for now
 */
+
+nav li .dropdown-list a {
+    font-size: .8rem;
+}
 
 nav div {
     display: inline-block;
@@ -57,12 +62,21 @@ to keep the container in the center.
     left: -10%;
     padding-left: 10%;
     background-color: rgb(0, 0, 0);
-    width: 110%;
+    width: max-content;
+}
+
+/*
+List has to turn back into a block or the text will be scrunched.
+There is def a better way to do this I'm sure but this works for now. 
+*/
+.dropdown-list li {
+    display: block;
 }
 
 .dropdown-menu:hover .dropdown-list {
     display: block;
 }
+
 
 .dropdown-menu li {
     padding-top: 10px;
