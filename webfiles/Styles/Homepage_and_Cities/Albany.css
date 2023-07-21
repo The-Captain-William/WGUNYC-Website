@@ -1,0 +1,21 @@
+#main-image {
+    width: 45vw;
+    left: -5vw;
+    top: -18vw;
+}
+
+
+@media screen and (max-width:500px) {
+    section {
+        height: 70vh;
+        width: auto;
+    }
+
+    #main-image {
+        position: static;
+        height: auto;
+        width: 100vw;
+        margin-left: -35vw;
+        top: -30vh;
+    }
+}

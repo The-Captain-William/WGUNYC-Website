@@ -1,0 +1,10 @@
+#main-image {
+    width: auto;
+    left: -5vw;
+}
+
+@media screen and (max-width:500px) {
+    #main-image {
+        margin-left: -20vw;
+    }
+}

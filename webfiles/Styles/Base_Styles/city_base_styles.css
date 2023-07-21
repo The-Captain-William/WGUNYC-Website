@@ -1,0 +1,73 @@
+#main-page-contents {
+    display: flex;
+    align-content: center;
+}
+
+/*
+Using the section to crop the image
+and adjust the focal point
+*/
+section {
+    width: 40vw;
+    overflow: hidden;
+    height: 85vh;
+}
+
+/*
+Relative so in desktop mode text and everything remains intact. 
+*/
+
+#main-image {
+    width: 90vw;
+    position: relative;
+    left: -25vw;
+    top: -10vh;
+}
+
+aside {
+    margin-left: 65px;
+}
+
+.aside-funbox {
+    margin-top: 100px;
+}
+
+aside p {
+    max-width: 50ch;
+}
+
+/*
+Static so there is no hidden part of the picture pushing text down too far // tablet
+*/
+@media screen and (max-width:1500px) {
+    #main-page-contents {
+        flex-wrap: wrap;
+    }
+
+    section {
+        height: auto;
+        width: auto;
+    }
+
+    #main-image {
+        width: 100vw;
+        position: static;
+    }
+
+    aside {
+        margin-left: 0px;
+    }
+}
+
+
+/*
+This time using margin w/ a static image to scoot it into place // mobile
+*/
+@media screen and (max-width:500px) {
+    #main-image {
+        height: 100vw;
+        width: auto;
+        margin-left: -60vw;
+
+    }
+}

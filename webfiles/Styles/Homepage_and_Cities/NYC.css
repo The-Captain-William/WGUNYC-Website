@@ -1,0 +1,11 @@
+#main-image {
+    width: 60vw;
+    left: -12vw;
+    top: -30vh;
+}
+
+@media screen and (max-width:500px) {
+    #main-image {
+        margin-left: 0;
+    }
+}
