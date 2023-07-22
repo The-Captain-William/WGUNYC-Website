@@ -1,0 +1,45 @@
+/*
+Note that the flex property is w.r.t the container
+
+The flex .container will only stretch as far as it 
+needs to in order to contain its elements.
+- This can be overwritten w/ height. 
+
+By default, flex items will shrink to fit everything 
+to fit in one line. Change w/ flex-wrap
+
+You can over-write attributes of the container for specific elements
+within the container using `*-self`, like `align-self`.
+
+*/
+
+.container {
+    border: 3px solid lightgrey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    background: gold;
+}
+
+.box-first {
+    align-self: flex-start;
+}
+
+.container2 {
+    display: grid;
+    grid-template-rows: 100px auto 100px;
+    grid-template-columns: 30fr 70fr;
+    border: 3px solid rgb(135, 163, 163);
+    height: 50vh;
+    gap: 10px;
+}
+
+.box-grid-first {
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
