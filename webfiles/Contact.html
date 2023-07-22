@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans">
+    <link rel="stylesheet" href="Styles/Base_Styles/base_styles.css">
+    <link rel="stylesheet" href="Styles/Base_Styles/city_base_styles.css">
+    <script src="Scripts/confirmEmail.js"></script>
+</head>
+
+<body>
+    <header>
+        <p>I ❤ NY</p>
+        <nav>
+            <ul>
+                <li class="dropdown-menu"><a href="#">Menu</a>
+                    <ul class="dropdown-list">
+                        <li><a href="Homepage.html">Home</a></li>
+                        <li><a href="Albany.html">State Capitol</a></li>
+                        <li><a href="NYC.html">NYC</a></li>
+                        <li><a href="Niagara_Falls.html">Niagara Falls</a></li>
+                        <li><a href="Sources.html">Sources</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>New York.</h1>
+    <div id="main-page-contents">
+        <section>
+            <img id="main-image" src="Images/Manhattan Bridge.webp" alt="The Manhattan bridge by Francesca Saraco">
+        </section>
+        <aside>
+            <form id="contactForm" action="https://formsubmit.co/theavenger16@gmail.com" method="post">
+                <!-- my spam email -->
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="example@example.com" required>
+                </div>
+                <div>
+                    <label for="confirmEmail">Confirm Email:</label>
+                    <input type="email" id="confirmEmail" name="confirmEmail" placeholder="example@example.com"
+                        required>
+                </div>
+                <div>
+                    <label for="firstname">First Name:</label>
+                    <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
+                </div>
+                <div>
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message" rows="10" placeholder="Message" required></textarea>
+                </div>
+                <input type="submit" value="Submit" onclick="validateEmail()">
+            </form>
+        </aside>
+    </div>
+</body>
+
+</html>

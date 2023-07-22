@@ -13,18 +13,19 @@ h1 {
 }
 
 a {
-    color: gainsboro;
+    color: whitesmoke;
     text-decoration-line: none;
     width: max-content;
 }
+
 
 a:visited {
     color: whitesmoke;
 }
 
 a:hover {
-    color: whitesmoke;
-    text-shadow: 0px 0px 0.125rem whitesmoke;
+    color: dodgerblue;
+    text-shadow: 0px 0px 0.125rem dodgerblue;
     transition: all 0.3s;
 }
 
@@ -32,22 +33,22 @@ a:hover {
 I'm sure there is a better way, but this works to keep items apart for now
 */
 
-nav li .dropdown-list a {
-    font-size: .8rem;
+header {
+    display: flex;
+    justify-content: space-between;
 }
 
-nav div {
-    display: inline-block;
-    margin-left: 80vw;
+nav li .dropdown-list a {
+    font-size: .8rem;
 }
 
 nav ul li {
     display: inline-block;
 }
 
-
 .dropdown-menu {
     position: relative;
+    right: 3vw;
 }
 
 /*
@@ -69,6 +70,7 @@ to keep the container in the center.
 List has to turn back into a block or the text will be scrunched.
 There is def a better way to do this I'm sure but this works for now. 
 */
+
 .dropdown-list li {
     display: block;
 }
@@ -85,6 +87,43 @@ There is def a better way to do this I'm sure but this works for now.
 
 aside p {
     margin-top: 0px;
+}
+
+
+/* Add styles to the table */
+table {
+    border-collapse: collapse;
+    border: 2px solid whitesmoke;
+    width: 100%;
+}
+
+/* Cell Styles */
+th,
+td {
+    padding: 10px;
+    /* Add padding to cells */
+    border: 1px solid whitesmoke;
+    /* White border for each cell */
+}
+
+/* Header */
+th {
+    background-color: black;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
 }
 
 @media screen and (max-width:900px) {

@@ -1,0 +1,24 @@
+#main-image {
+    top: -40vh;
+    width: 45vw;
+    left: 0;
+
+}
+
+#data-sources {
+    margin-top: 10px;
+    float: left;
+}
+
+#image-sources {
+    margin-top: 10px;
+    float: right;
+}
+
+@media screen and (max-width:500px) {
+    #main-image {
+        margin-left: 0;
+        height: auto;
+        width: 100vw;
+    }
+}
